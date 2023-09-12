@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Space tourism website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Open+Sans:wght@300;400&family=Poppins:wght@100;300;400&family=Raleway:ital,wght@0,100;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Bellefair&family=Open+Sans:wght@300;400&family=Poppins:wght@100;300;400&family=Raleway:ital,wght@0,100;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Barlow:wght@300&family=Bellefair&family=Open+Sans:wght@300;400&family=Poppins:wght@100;300;400&family=Raleway:ital,wght@0,100;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <style>
+               *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --li-family:'Barlow Condensed', sans-serif;
+    --main-family:'Bellefair', serif;
+    }
+body{
+    background-color: rgb(12, 16, 22);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    display: flex;
+}
+.navbar .logo{
+    margin-left: 56px;
+    margin-top: 56px;
+}
+.navbar .logo::before{
+    content: '';
+    position:absolute;
+    width: 740px;
+    height: 1px;
+    left:12%;
+    top: 13%;
+    background-color: rgb(123, 138, 160);
+}
+.navbar img{
+    width:48px;
+}
+.mycheckbox{
+    display: none;
+    }
+    .checkbtn{
+    float: right;
+    cursor: pointer;
+    display: none;
+    color: white;
+    }
+.navlinks{
+    display: flex;
+    padding-right: 40px;
+    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1));
+    backdrop-filter: blur(1.5rem);
+    -webkit-backdrop-filter: blur(0px);
+    height: 15vh;
+    width: 54%;
+        margin-top: 33px;
+        padding: 0 93px;
+        right: 0;
+        position: absolute;
+}
+.navbar li{
+    list-style-type: none;
+    padding: 33px 0;
+    padding-right: 42px; 
+}
+.navlinks span{
+    margin: 0 8px 0 0;
+    font-weight:900;
+}
+.navbar li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2.9px;
+    font-weight: 500;
+    font-family: var(--li-family);
+    position: relative;       
+}
+.navlinks .active a::after{
+    background: white;
+    height: 3px;
+    width: 100%;
+}
+.navbar li a::after{
+    content: '';
+    background: rgb(145, 141, 141);
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: -37px;
+    left:0;
+}
+.navbar li a:hover::after{
+    width: 100%;
+    height: 3px;
+}
+/*.......................................................................*/
+section{
+    display: flex;
+    color: white;
+    width: 100%;
+    padding: 85px 105px;
+}
+.content{
+    width: 50%;
+
+}
+.content h3{
+    font-size:28px;
+    font-family: var(--li-family); 
+    font-weight: 500;
+    letter-spacing: 6.5px;
+}
+.content span{
+    font-weight: 900;
+    font-family: var(--li-family);
+    color: rgb(148, 148, 147);
+    padding-right: 20px;
+}
+.content h2{
+    font-size: 32px;
+    padding-top: 140px;
+    font-weight: 300;
+    color: #ffffff80;
+    font-family: var(--main-family);
+}
+.content h1{
+    font-size: 56px;
+    margin-top: 8px;
+    font-weight: 200;
+    font-family: var(--main-family);
+}
+.content p{
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 15px;
+    letter-spacing: 1px;
+    line-height: 25px;
+    width: 500px;
+    font-family: 'Barlow', sans-serif;
+}
+.picture{
+    margin-left: 80px;
+}
+.content .circle{
+    display: flex;
+    margin-top: -20%;
+}
+.circle h2{
+    padding-right: 20px;
+   
+}
+.circle h2 a.active{
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+.circle h2 a{
+    text-decoration: none;
+    background-color: rgb(68, 65, 65);
+    font-size: 0px;
+    padding: 10px 10px;
+    border-radius: 50%;
+    color: rgb(223, 216, 216);
+    transition: 0.2s;
+}
+.circle h2 a:hover{
+    background-color: grey;
+    color: gray;
+}
+.picture img{
+    width: 433px;
+    padding-top: 10%;
+}
+
+/*..............................................tablet...............................*/
+@media screen and (min-width:721px) and (max-width:768px){
+    .navbar .logo{
+        margin-left: 37px;
+        margin-top: 57px;
+    }
+    .navbar .logo::before{
+        width: 80px;
+        top: 15%;
+        left: 15%;
+    }
+    .navlinks{
+       height: 17vh;
+       width: 78%;
+       align-items: center;
+       justify-content: center;
+       padding: 0;
+       backdrop-filter: blur(10px);
+    }
+    .navlinks li{
+       padding: 0 13px;
+    }
+    .navlinks li a::after{
+        bottom: -34px;
+    }
+    section{
+        padding: 90px 60px;
+    }
+    section .content h3{
+        letter-spacing: 4px;
+    }
+    .content h2{
+        padding-top: 32px;
+    }
+    .content p{
+        width: 300px;
+    }
+    .content .circle{
+        margin-top: 10px;
+    }
+    .picture img{
+        width: 300px;
+    }
+}
+/*..............................................................mobile-view.....................*/
+@media screen and (min-width:320px) and (max-width:425px){
+    body{
+        background-position: center;
+        background-size: cover;
+        height: auto;
+    }
+    .navbar{
+        width: 100%;   
+    }
+    .navbar .logo{
+       margin: 23px;
+    }
+    .navbar img{
+        width: 48px;
+    }
+    .navbar .logo::before{
+        display: none;
+    }
+    .navlinks{
+        flex-direction: column;
+        padding: 40px 0;
+        position: absolute;
+        margin-bottom: 0;
+        margin-left: 0;
+        z-index: 1;
+        width: 70%;
+        height: 90vh;
+        margin-top: 60px;
+        display: none;
+        transition: 1s ease-in-out; 
+    }
+    .navbar li{
+        padding-left: 20px;
+        padding-top: 35px;
+       margin: 0;
+    }
+    .navbar li a{
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .checkbtn{
+        display: block;
+        color: white;
+        right: 0;
+        margin-top: 30px;
+        margin-right: 20px;
+        position: absolute;
+    }
+    label i{
+        font-size: 28px;
+    }
+    #mycheck:checked ~ .navlinks{
+        display: block;
+    }
+    .navbar li a::after{
+       display: none;
+    }
+    section{
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    section .content{
+        width: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin-top: -300px;
+        margin-bottom: 100px;
+
+    }
+    .section .picture{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    .picture img{
+        width: 228px;
+        padding-top: 50px;
+        align-items: center;
+    }
+    .content h3{
+    font-size: 25px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    }
+    .content h2{
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(100, 99, 99);
+    margin-top: 85%;
+    }
+    .content h1{
+        font-size: 24px;
+    }
+    .content p{
+        font-size: 15px;
+        word-spacing: 1px;
+        width: 330px;
+        line-height: 23px;
+        align-items: center;
+        text-align: center;
+    }
+    .content .circle{
+       margin-top: -60%;
+       margin-left: 2%;
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navcontainer">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="logo.svg" alt="">
+                </div>
+                <input type="checkbox" class="mycheckbox" id="mycheck">
+                <label for="mycheck" class="checkbtn"><i class="fa-solid fa-bars"></i></label>
+                <ul class="navlinks">
+                    <li><a href="index.html"><span>00</span>HOME</a></li>
+                    <li><a href="destination.html"><span>01</span>DESTINATION</a></li>
+                    <li class="active"><a href="crew.html"><span>02</span>CREW</a></li>
+                    <li><a href="technology.html"><span>03</span>TECHNOLOGY</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="content">
+                <h3><span>02</span>MEET YOUR CREW</h3>
+                <h2>FLIGHT ENGINEER</h2>
+                <h1>ANOUSHEH ANSARI</h1>
+                <p>Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.</p>
+                <div class="circle">
+                    <h2><a href="crew.html">00</a></h2>
+                    <h2><a href="mark.html">00</a></h2>
+                    <h2><a href="pilot.html">00</a></h2>
+                    <h2><a href="anoush.html" class="active">00</a></h2>
+                </div>
+            </div>
+            <div class="picture">
+            <img src="anoush.webp" alt="">
+            </div>
+        </section>
+    </main>
+</body>
+</html>

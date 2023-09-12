@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Space tourism website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Open+Sans:wght@300;400&family=Poppins:wght@100;300;400&family=Raleway:ital,wght@0,100;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Bellefair&family=Open+Sans:wght@300;400&family=Poppins:wght@100;300;400&family=Raleway:ital,wght@0,100;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Barlow:wght@300&family=Bellefair&family=Open+Sans:wght@300;400&family=Poppins:wght@100;300;400&family=Raleway:ital,wght@0,100;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --li-family:'Barlow Condensed', sans-serif;
+    --main-family:'Bellefair', serif;
+    }
+body{
+    background-image: url(destination.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+   background-position: center;
+}
+.navbar{
+    display: flex;
+}
+.navbar .logo{
+    margin-left: 56px;
+    margin-top: 56px;
+}
+.navbar .logo::before{
+    content: '';
+    position:absolute;
+    width: 720px;
+    height: 0.1px;
+    left:12%;
+    top: 13%;
+    background-color: rgb(123, 138, 160);
+}
+.navbar img{
+    width:48px;
+}
+.mycheckbox{
+    display: none;
+    }
+    .checkbtn{
+    float: right;
+    cursor: pointer;
+    display: none;
+    color: white;
+    }
+.navlinks{
+    display: flex;
+    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1));
+    backdrop-filter: blur(1.5rem);
+    -webkit-backdrop-filter: blur(0px);
+    height: 15vh;
+    width: 54%;
+        margin-top: 33px;
+        padding: 0 93px;
+        right: 0;
+        position: absolute;
+}
+.navbar li{
+    list-style-type: none;
+    padding: 33px 0;
+    padding-right: 42px;
+   
+}
+.navlinks span{
+    margin: 0 8px 0 0;
+    font-weight:900;
+}
+.navbar li a{
+    text-decoration: none;
+        color: white;
+        font-size: 18px;
+        letter-spacing: 2px;
+        font-weight: 500;
+        position: relative;
+        font-family: var(--li-family);    
+}
+.navlinks .active a::after{
+    background: white;
+    height: 3px;
+    width: 100%;
+}
+.navbar li a::after{
+    content: '';
+    background: rgb(145, 141, 141);
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: -37px;
+    left:0;
+}
+.navbar li a:hover::after{
+    width: 100%;
+    height: 3px;
+}
+@media only screen and (max-width:365px){
+    body{
+        background-position: center;
+        background-size: cover;
+        height: auto;
+    }
+    .navbar{
+        width: 100%;   
+    }
+    .navbar .logo{
+       margin: 22px;
+    }
+    .navbar img{
+        width: 48px;
+    }
+    .navbar .logo::before{
+        display: none;
+    }
+    .navlinks{
+        flex-direction: column;
+        padding: 40px 0;
+        position: absolute;
+        margin-right: -100%;
+        margin-bottom: 0;
+        margin-left: 0;
+       z-index: 1;
+       width: 70%;
+       height: 90vh;
+       margin-top: 60px;
+       transition: 1s ease-in-out; 
+    }
+    .navbar li{
+        padding-left: 20px;
+        padding-top: 35px;
+       margin: 0;
+    }
+    .navbar li a{
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .checkbtn{
+        display: block;
+        color: white;
+        right: 0;
+        margin-top: 30px;
+        margin-right: 20px;
+        position: absolute;
+    }
+    label i{
+        font-size: 28px;
+    }
+    #mycheck:checked ~ .navlinks{
+        display: block;
+        margin-right: 0;
+    }
+    .navbar li a::after{
+       display: none;
+    }
+}
+/*................................................*/
+section{
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    margin-top: 60px;
+    padding: -10px 160px;
+    width: 100%;
+}
+section h3{
+    font-size: 23px;
+    padding: 32px 0 0;
+        letter-spacing: 4px;
+        word-spacing: 10px;
+        font-weight: 500;
+        font-family: var(--li-family);  
+}
+section span{
+    font-weight: 900;
+        font-family: var(--li-family);
+        color: rgb(148, 148, 147);
+}
+section .picture{
+        margin-left: -20px;
+    }
+section img{
+    width: 450px;
+    padding-top: 30px;
+}
+section .para{
+    width: 470px;
+    margin-top: 110px;
+    margin-left: -100px;
+}
+.para .types{
+display: flex;
+}
+.types li{
+    list-style-type: none;
+}
+.types .active a{
+    color: white;
+}
+.types .active a::after{
+    content: '';
+    background: white;
+    height: 3px;
+    width: 59%;
+}
+.types li a{
+    text-decoration: none;
+    padding-right:  30px;
+    color: rgb(180, 178, 178);
+    font-size: 19px;
+    letter-spacing: 2.5px;
+    font-family: var(--li-family);
+    position: relative;
+}
+.types li a::after{
+    content: '';
+    left:0;
+    right: 0;
+    height: 3px;
+    width: 0;
+    background: white;
+    position: absolute;
+    bottom: -15px;
+}
+.types li a:hover::after{
+    width: 55%;
+    height: 3px;
+}
+.para h1{
+    padding-top: 40px;
+    font-size: 100px;
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-family: var(--main-family);
+}
+.para p{
+    padding-top: 20px;
+    font-size: 18px;
+    letter-spacing: 0.9px;
+    line-height: 24px;
+    width: 450px;
+    font-family: 'Barlow', sans-serif;
+    position: relative;
+}
+.para p::after{
+    content: '';
+    position: absolute;
+    background-color: rgb(196, 188, 188);
+    height: 0.1px;
+    width: 440px;
+    bottom: -40px;
+    left: 0;
+}
+.avg{
+    display: flex;
+    margin-top: 80px;
+}
+.avg h4{
+    color: gray;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+}
+.avg h2{
+    font-size: 28px;
+        padding-top: 8px;
+        padding-bottom: 50px;
+        font-family: 'Bellefair', serif;
+}
+.avg2{
+    margin-left: 60px;
+}
+@media only screen and (max-width:365px){
+    section{
+        width: 100%;
+        padding: 0 30px;
+        margin: 0;
+        display: block;
+    }
+    section .picture{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    section img {
+        width: 260px;
+        padding-top: 30px;
+        padding-left: 60px;
+    }
+    section h3 {
+        font-size: 27px;
+        font-weight: 100;
+        width: 300px;
+        text-align: center;
+    }
+    section .para {
+        width: 300px;
+        margin-top: 70px;
+        padding-left: 30px;
+        padding-right: 0px;
+        margin-left: 0;
+    }
+    .types .active a::after {
+        height: 2px;
+        width: 63%;
+        bottom: -0px;
+    }
+    .types li a {
+        text-decoration: none;
+        padding-right: 70px;
+        color: rgb(180, 178, 178);
+        font-size: 17px;
+        letter-spacing: 2px;
+        position: relative;
+    }
+    .types li a:hover::after{
+        width: 63%;
+        height: 2px;
+        bottom: 0px;
+    }
+    .para h1 {
+        padding-top: 40px;
+        font-size: 60px;
+        letter-spacing: 3px;
+        font-weight: 100;
+    }
+    section .para p{
+        font-size: 15px;
+        line-height: 20px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    } 
+    section .para p::after{
+        width: 240px;
+    }
+    .avg h4{
+        font-size: 10px;
+        word-spacing: 0;
+    }
+    .avg h2{
+        font-size: 14px;
+
+    }
+   
+}
+/*..........................tablet.........*/
+@media screen and (min-width:721px) and (max-width:768px){
+    .navbar .logo{
+        margin-left: 37px;
+        margin-top: 57px;
+    }
+    .navbar .logo::before{
+        width: 80px;
+        top: 15%;
+        left: 15%;
+    }
+    .navlinks{
+       height: 17vh;
+       width: 78%;
+       align-items: center;
+       justify-content: center;
+       padding: 0;
+       backdrop-filter: blur(10px);
+    }
+    .navlinks li{
+       padding: 0 13px;
+    }
+    .navlinks li a::after{
+        bottom: -34px;
+    }
+    section{
+        padding: 0;
+    }
+    section img{
+        width: 300px;
+    } 
+    section .picture{
+        margin-left: 10px;
+    }
+    section .para  h1{
+        font-size: 80px;
+    }
+    section .para {
+        margin-left: 0px;
+        width: 300px;
+        margin-right: 30px;
+    }
+    section .para p{
+        width: 350px;
+    }
+    section .para p::after{
+        width: 350px;
+    }
+    .types .active a::after {
+        content: '';
+        background: white;
+        height: 3px;
+        width: 160%;
+    }
+    .types li a:hover::after{
+        width: 130%;  
+    }
+    .avg h4{
+        font-size: 15px;
+        word-spacing: 0;
+    }
+    .avg h2{
+        font-size: 20px;
+    }
+}
+/*..................................................mobile.-view...................................*/
+@media screen and (min-width:320px) and (max-width:425px){
+    body{
+        background-position: center;
+        background-size: cover;
+        height: auto;
+        width: 100%;
+    }
+    .navbar{
+        width: 100%;   
+    }
+    .navbar .logo{
+        margin: 22px;
+    }
+    .navbar img{
+        width: 48px;
+    }
+    .navbar .logo::before{
+        display: none;
+    }
+    .navlinks{
+        flex-direction: column;
+       padding: 40px 0;
+       margin-bottom: 0;
+       margin-left: 0;
+       z-index: 1;
+       width: 70%;
+       height: 90vh;
+       margin-top: 60px;
+       display: none;
+       transition: 1s ease-in-out;   
+    }
+    .navbar li{
+        padding-left: 20px ;
+        padding-top: 35px;
+        margin: 0;
+    }
+    .navbar li a{
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .checkbtn{
+        display: block;
+        color: white;
+        right: 0;
+        margin-top: 30px;
+        margin-right: 20px;
+        position: absolute;
+    }
+    label i{
+        font-size: 28px;
+    }
+    #mycheck:checked ~ .navlinks{
+        display: block;
+    }
+    .navbar li a::after{
+       display: none;
+    }
+    section{
+        width: 100%;
+        padding: 0 10px;
+        margin: 0;
+        display: block;
+        align-items: center;
+    }
+    section .picture{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+    section img {
+        width: 260px;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    section h3 {
+        font-size: 27px;
+        font-weight: 100;
+    }
+    section .para {
+        width: 100%;
+        margin-top: 70px;
+        padding: 0 20px;
+        margin-left: 0;
+        text-align: center;
+    }
+    .types .active a::after {
+        height: 2px;
+        width: 72%;
+        bottom: -0px;
+    }
+    .types li a {
+        text-decoration: none;
+        padding-right: 70px;
+        color: rgb(180, 178, 178);
+        font-size: 17px;
+        letter-spacing: 2px;
+        position: relative;
+    }
+    .types li a:hover::after{
+        width: 63%;
+        height: 2px;
+        bottom: 0px;
+    }
+    .para h1 {
+        padding-top: 40px;
+        font-size: 50px;
+        letter-spacing: 1px;
+        font-weight: 100;
+    }
+    section .para p{
+        font-size: 15px;
+        line-height: 20px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    } 
+    section .para p::after{
+        width: 100%;
+    }
+    .avg{
+        display: flex;
+        justify-content: center;
+    }
+    .avg h4{
+        font-size: 10px;
+        word-spacing: 0;
+    }
+    .avg h2{
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navcontainer">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="logo.svg" alt="">
+                </div>
+                <input type="checkbox" class="mycheckbox" id="mycheck">
+                <label for="mycheck" class="checkbtn"><i class="fa-solid fa-bars"></i></label>
+                <ul class="navlinks">
+                    <li><a href="index.html"><span>00</span>HOME</a></li>
+                    <li class="active"><a href="destination.html"><span>01</span>DESTINATION</a></li>
+                    <li><a href="crew.html"><span>02</span>CREW</a></li>
+                    <li><a href="technology.html"><span>03</span>TECHNOLOGY</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="picture">
+                <h3><span>01</span> PICK YOUR DESTINATION</h3>
+                <img src="titan.webp" alt="">
+            </div>
+            <div class="para">
+                <ul class="types">
+                   <li><a href="destination.html">MOON</a></li>
+                    <li><a href="mars.html">MARS</a></li>
+                    <li><a href="europa.html">EUROPA</a></li>
+                    <li class="active"><a href="titan.html">TITAN</a></li>
+                </ul>
+                <h1>TITAN</h1>
+                <p>The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.</p>
+                <div class="avg">
+                    <div class="avg1">
+                        <h4>AVG. DISTANCE</h4>
+                        <h2>1.6 BIL. KM</h2>
+                    </div>
+                    <div class="avg2">
+                        <h4>EST. TRAVEL TIME</h4>
+                        <h2>7 YEARS</h2>
+                    </div>
+                </div>
+            </div>
+         </section>
+    </main>
+</body>
+</html>
